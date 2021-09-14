@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        fieldset {
+            border: 3px solid blue;
+            border-radius: 20px;
+        }
+        legend {
+            color: blue;
+            font-weight: bolder;
+        }
+        fieldset input, select, textarea {
+            background-color: rgb(238, 243, 253);
+            border: none;
+            border-bottom: 1px solid blue;
+        }
+
+        fieldset {
+
+        }
+
+        fieldset input:hover {
+            background-color: rgb(152, 186, 255);
+        }
+        /* .miclase {
+            margin: 0;
+            margin-top:5px;
+        } */
+        div > p {
+            margin: 0;
+            margin-top:5px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>My First Form</h1>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus voluptates magnam itaque nesciunt, ab eligendi ex consectetur esse mollitia odio in? Vero saepe illum perferendis eligendi itaque doloremque ullam reprehenderit?</p>
+    <form action="/server.php">
+        <fieldset>
+            <legend>Datos Personales</legend>
+            <label for="fname">Nombres</label>
+            <input type="text" id="fname" name="fname" placeholder="Escriba ambos nombres"><br>
+            <label for="sname">Apellidos</label>
+            <input type="text" id="sname" name="sname"><br>
+            <label for="typeID">Tipo de Identificación</label>
+            <select name="typeID" id="typeID">
+                <option value="none"></option>
+                <option value="cc">Cédula de Ciudadanía</option>
+                <option value="ti">Tarjeta de Identidad</option>
+                <option value="ce">Cédula de Extranjería</option>
+                <option value="ps">Pasaporte</option>
+            </select><br>
+            <label for="myID">Número de Identificación</label>
+            <input type="number" id="myID" name="myID"><br>
+            <label for="birthday">Fecha de Nacimiento</label>
+            <input type="date" id="birthday" name="birthday">
+            <label for="age">Edad</label>
+            <input type="number" id="age" name="age" min="18" max="100" step="5"><br>
+            <label for="descrip">Descripción:</label><br>
+            <textarea name="descrip" id="descrip" cols="50" rows="3"></textarea>
+        </fieldset>
+        <fieldset>
+            <legend>Cuestionario</legend>
+            <div>
+                <p>Indique su jornada de estudios...</p>
+                <!-- <p class="miclase">Indique su jornada de estudios...</p> -->
+                <input type="radio" id="morning" name="journey" value="morning">
+                <label for="">Mañana</label>
+                <input type="radio" id="afternoon" name="journey" value="afternoon">
+                <label for="">Tarde</label>
+                <input type="radio" id="night" name="journey" value="night">
+                <label for="">Noche</label>
+            </div>
+            <div>
+                <p>Indique los cursos que toma...</p>
+                <input type="checkbox" id="java" name="course1">
+                <label for="java">Java</label><br>
+                
+                <input type="checkbox" id="python" name="course2">
+                <label for="python">Python</label><br>
+                
+                <input type="checkbox" id="oop" name="course3">
+                <label for="oop">OOP</label><br>
+                
+                <input type="checkbox" id="UML" name="course4">
+                <label for="">UML</label><br>
+                
+                <input type="checkbox" id="db" name="course5">
+                <label for="db">Bases de Datos</label><br>
+            </div>
+            <p>¿Cómo te sientes en el retorno a presencialidad?</p>
+            <input list="feelings">
+            <datalist id="feelings">
+                <option value="Feliz">
+                <option value="Eufórico">
+                <option value="Triste">
+                <option value="Preocupado">
+                <option value="Enojado">
+                <option value="Indiferente">
+            </datalist><br><br>
+            <label for="trimester">Trimestre Actual:</label>
+            <select name="trimester" id="trimester" disabled>
+                <option value="1">1er. Trimestre</option>
+                <option value="2">2do. Trimestre</option>
+                <option value="3" selected>3er. Trimestre</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>Cuenta</legend>
+            <label for="mymail">Correo Electrónico</label>
+            <input type="email" id="mymail" name="mymail" placeholder="Ingrese su correo electrónico" size="30"><br>
+            <label for="username">Usuario</label>
+            <input type="text" id="username" name="username" placeholder="Ingrese su usuario" autocomplete="off" maxlength="6" required><br>
+            <label for="passcode">Contraseña</label>
+            <input type="password" id="passcode" name="passcode" placeholder="Ingrese contraseña" required><br>
+            <label for="myphoto">Fotografía</label>
+            <input type="file" id="myphoto" name="myphoto">
+        </fieldset><br>
+        <input type="submit" id="submit" value="Enviar">
+        <input type="reset" id="reset" value="Restablecer">
+
+    </form>
+</body>
+</html>
